@@ -14,7 +14,7 @@ import java.util.List;
 
 public class TestEpamGithubIOJDISite {
 
-    private static final String URLForTest = "https://epam.github.io/JDI/index.html";
+    private final String URL_FOR_TEST = "https://epam.github.io/JDI/index.html";
 
     //1. Create a new test
     @Test
@@ -23,8 +23,8 @@ public class TestEpamGithubIOJDISite {
         driver.manage().window().maximize();
 
         //2. Open test site by URL
-        driver.navigate().to(URLForTest);
-        assertEquals(driver.getCurrentUrl(), URLForTest);
+        driver.navigate().to(URL_FOR_TEST);
+        assertEquals(driver.getCurrentUrl(), URL_FOR_TEST);
 
         //3. Assert Browser title
         assertEquals(driver.getTitle(), "Home Page");
