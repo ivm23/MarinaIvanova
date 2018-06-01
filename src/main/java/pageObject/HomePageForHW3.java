@@ -9,7 +9,7 @@ import java.util.List;
 
 import static org.testng.Assert.assertEquals;
 
-public class HomePage {
+public class HomePageForHW3 {
 
     @FindBy(css = ".profile-photo")
     private WebElement userIcon;
@@ -50,12 +50,12 @@ public class HomePage {
     @FindBy(css = "footer")
     private WebElement footer;
 
-    public void open(WebDriver driver) {
-        driver.navigate().to("https://epam.github.io/JDI/index.html");
+    public void open(WebDriver driver, String url) {
+        driver.navigate().to(url);
     }
 
-    public void checkHomePageTitle(WebDriver driver) {
-        assertEquals(driver.getTitle(), "Home Page");
+    public void checkHomePageTitle(WebDriver driver, String title) {
+        assertEquals(driver.getTitle(), title);
     }
 
     public void login(String userName, String password) {
@@ -65,12 +65,12 @@ public class HomePage {
         loginButton.click();
     }
 
-    public void checkUserName() {
-        assertEquals(userName.getText(), "PITER CHAILOVSKII");
+    public void checkUserName(String name) {
+        assertEquals(userName.getText(), name);
     }
 
-   public void checkNumberOfItemsInHeaderSectionIsFour() {
-        assertEquals(itemsOnHeaderSection.size(), 4);
+   public void checkNumberOfItemsInHeaderSectionIsFour(int countOfItems) {
+        assertEquals(itemsOnHeaderSection.size(), countOfItems);
     }
 
     public void checkItemsOnHeaderSectionAreDisplayed() {
@@ -86,8 +86,8 @@ public class HomePage {
         assertEquals(itemsOnHeaderSection.get(3).getText(), "METALS & COLORS");
     }
 
-    public void checkNumberOfImagesOnHomePageIsFour() {
-        assertEquals(imagesOnHomePage.size(), 4);
+    public void checkNumberOfImagesOnHomePageIsFour(int countOfImages) {
+        assertEquals(imagesOnHomePage.size(), countOfImages);
     }
 
     public void checkImagesOnHomePageAreDisplayed() {
@@ -96,8 +96,8 @@ public class HomePage {
         }
     }
 
-    public void checkNumberOfTextsOnHomePageUnderIconsIsFour() {
-        assertEquals(textsUnderIcons.size(), 4);
+    public void checkNumberOfTextsOnHomePageUnderIconsIsFour(int countOfTexts) {
+        assertEquals(textsUnderIcons.size(), countOfTexts);
     }
 
     public void checkTextsOnHomePageUnderIconsHaveProperTexts() {
@@ -119,13 +119,13 @@ public class HomePage {
                         "IN VOLUPTATE VELIT ESSE CILLUM DOLORE EU FUGIAT NULLA PARIATUR.");
     }
 
-    public void checkTextOfSubHeaderIsCorrect() {
+    public void checkTextOfSubHeaderIsCorrect(String text) {
         Assert.assertTrue(subHeaderText.isDisplayed());
-        assertEquals(subHeaderText.getText(), "JDI GITHUB");
+        assertEquals(subHeaderText.getText(), text);
     }
 
-    public void checkJDIIsLinkAndHasProperURL() {
-        assertEquals(subHeaderText.getAttribute("href"), "https://github.com/epam/JDI");
+    public void checkJDIIsLinkAndHasProperURL(String url) {
+        assertEquals(subHeaderText.getAttribute("href"), url);
     }
 
     public void checkLeftSectionIsDisplayed() {
