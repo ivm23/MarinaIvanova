@@ -3,7 +3,6 @@ package pageObject;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
-import enums.Users;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
@@ -27,9 +26,6 @@ public class DatesPageHW4TestCase2 {
     private SelenideElement firstSlider = $("a[style^='left']:first-child");
     private SelenideElement lastSlider = $("a[style^='left']:last-child");
 
-    private SelenideElement logRows = $(".info-panel-body-log");
-
-    private SelenideElement topLogRow = $(".info-panel-body-log li:first-child");
     private SelenideElement firstLogRow = $(".info-panel-body-log li:nth-child(1)");
     private SelenideElement secondLogRow = $(".info-panel-body-log li:nth-child(2)");
 

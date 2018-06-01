@@ -6,8 +6,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pageObject.DatesPageHW4TestCase2;
 
-import javax.jws.soap.SOAPBinding;
-
 public class TestCase2EpamJDISiteWithSelenide extends TestBase {
     private DatesPageHW4TestCase2 datesPage;
 
@@ -53,9 +51,9 @@ public class TestCase2EpamJDISiteWithSelenide extends TestBase {
         datesPage.CheckContentLogRowsForSlider("(From):100", "(To):100");
 
         //12. Set Range sliders. left sliders - the most rigth position, right slider - the most rigth position.
-        datesPage.setRangeSliders(30, 70);
+        datesPage.setRangeSliders(0, 70);
 
         //13. Assert that for "From" and "To" sliders there are logs rows with corresponding values
-        datesPage.CheckContentLogRowsForSlider("(To):70", "(From):30");
+        datesPage.CheckContentLogRowsForSlider("(To):70", "(From):0");
     }
 }
